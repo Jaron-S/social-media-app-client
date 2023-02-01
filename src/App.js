@@ -1,4 +1,4 @@
-import { Browser, Navigate, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Navigate, Routes, Route, BrowserRouter } from 'react-router-dom';
 import HomePage from 'scenes/homePage';
 import LoginPage from 'scenes/loginPage';
 import ProfilePage from 'scenes/profilePage';
@@ -26,7 +26,6 @@ function App() {
             </Routes>
           </ThemeProvider>
         </BrowserRouter>
-
     </div>
   );
 }
