@@ -1,6 +1,5 @@
-import { Navigate, Routes, Route, BrowserRouter } from 'react-router-dom';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import HomePage from 'scenes/homePage';
-import LoginPage from 'scenes/loginPage';
 import ProfilePage from 'scenes/profilePage';
 import { useMemo } from "react";
 import { useSelector } from 'react-redux';
