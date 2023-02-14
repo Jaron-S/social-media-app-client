@@ -41,8 +41,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
             <FlexBetween gap="1rem">
                 <UserImage image={userPicturePath} size="55px" />
                 <Box
-                    onClick={(e) => {
-                        e.preventDefault();
+                    onClick={() => {
                         navigate(`/profile/${friendId}`);
                         navigate(0);
                     }}
@@ -66,10 +65,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
                 </Box>
             </FlexBetween>
             <IconButton
-                onClick={(e) => {
-                    e.preventDefault();
-                    patchFriend();
-                }}
+                onClick={() => patchFriend()}
                 sx={{ backgroundColor: primaryLight, p: "0.6rem"}}
             >
                 {isFriend ? (
