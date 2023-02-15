@@ -43,6 +43,7 @@ const initialState = {
         updatedAt: '2023-02-13T23:27:51.355Z',
         __v: 23
       },
+      posts: [],
       token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZDMyNDUzMTAyNDljNDNjYTM4ODA0YSIsImlhdCI6MTY3NjM5MjgxMn0.7dAcBwdpombdc-5r37ZbfExg68d9zKa3BcJ0liw2GmQ',
 };
 
