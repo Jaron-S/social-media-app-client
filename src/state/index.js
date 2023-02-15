@@ -35,8 +35,8 @@ const initialState = {
             picturePath: 'p7.jpeg'
           }
         ],
-        location: 'fakelocation',
-        occupation: 'fakeoccupation',
+        location: 'Toronto, ON',
+        occupation: 'Developer',
         viewedProfile: 23,
         impressions: 5127,
         createdAt: '2023-01-27T01:09:39.640Z',
@@ -44,11 +44,6 @@ const initialState = {
         __v: 23
       },
       token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZDMyNDUzMTAyNDljNDNjYTM4ODA0YSIsImlhdCI6MTY3NjM5MjgxMn0.7dAcBwdpombdc-5r37ZbfExg68d9zKa3BcJ0liw2GmQ',
-      friends: [],
-      location: 'fakelocation',
-      occupation: 'fakeoccupation',
-      viewedProfile: 23,
-      impressions: 5127,
 };
 
 export const authSlice = createSlice({
