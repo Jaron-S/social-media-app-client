@@ -6,14 +6,17 @@ import posts from "data/posts";
 
 const PostsWidget = ({ userId, isProfile = false }) => {
   const dispatch = useDispatch();
-  //   const posts = useSelector((state) => state.posts);
+  const posts = useSelector((state) => state.posts);
   const token = useSelector((state) => state.token);
 
   const getPosts = async () => {
-    const response = await fetch("https://social-media-app-server.onrender.com/posts", {
+    const response = await fetch(
+      "https://social-media-app-server.onrender.com/posts",
+      {
         method: "GET",
-        headers: {Authorization: `Bearer ${token}`},
-    });
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     const data = await response.json();
     dispatch(setPosts({ posts: data }));
   };
