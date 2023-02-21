@@ -13,6 +13,7 @@ const UserImage = ({ image, size = "60px" }) => {
       return true;
     }
   }
+  console.log(`Picture Path: ${image}`);
   // update post's picture path
   if (!checkFileExists(image)) {
     image = `https://social-media-app-server.onrender.com/assets/${image}`;

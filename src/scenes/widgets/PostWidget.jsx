@@ -62,13 +62,11 @@ const PostWidget = ({
       return true;
     }
   }
-  console.log(`Picture Path: ${picturePath}`);
   // update post's picture path
   if (!checkFileExists(picturePath)) {
     picturePath = `https://social-media-app-server.onrender.com/assets/${picturePath}`;
   } else {
     picturePath = `/assets/${picturePath}`;
-    console.log(`Changing path`);
   }
 
   return (
