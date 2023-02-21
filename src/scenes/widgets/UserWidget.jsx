@@ -60,7 +60,7 @@ const UserWidget = ({ userId, picturePath }) => {
         onClick={() => navigate(`/profile/${userId}`)}
       >
         <FlexBetween gap="1rem">
-          <UserImage image={picturePath} />
+          <UserImage picturePath={picturePath} />
           <Box>
             <Typography
               variant="h4"
@@ -123,7 +123,7 @@ const UserWidget = ({ userId, picturePath }) => {
 
         <FlexBetween gap="1rem" mb="0.5rem">
           <FlexBetween gap="1rem">
-            <img src="/assets/twitter.png" alt="twitter" />
+            <img src="/assets/twitter.webp" alt="twitter" />
             <Box>
               <Typography color={main} fontWeight="500">
                 Twitter
@@ -136,7 +136,7 @@ const UserWidget = ({ userId, picturePath }) => {
 
         <FlexBetween gap="1rem">
           <FlexBetween gap="1rem">
-            <img src="/assets/linkedin.png" alt="linkedin" />
+            <img src="/assets/linkedin.webp" alt="linkedin" />
             <Box>
               <Typography color={main} fontWeight="500">
                 LinkedIn

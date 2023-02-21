@@ -6,12 +6,13 @@ import { setFriends } from "state";
 import FlexBetween from "./FlexBetween";
 import UserImage from "./UserImage";
 
-const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
+const Friend = ({ friendId, name, subtitle, picturePath }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { _id } = useSelector((state) => state.user);
   const token = useSelector((state) => state.token);
   const friends = useSelector((state) => state.user.friends);
+  console.log(friends);
 
   const { palette } = useTheme();
   const primaryLight = palette.primary.light;
@@ -21,16 +22,18 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
   const isFriend = friends.find((friend) => friend._id === friendId);
 
+  console.log(`PicturePath (Friend): ${picturePath}`);
+
   const patchFriend = async () => {
     const response = await fetch(
-        `https://social-media-app-server.onrender.com/users/${_id}/${friendId}`,
-        {
-            method: "PATCH",
-            headers: {
-                Authorization: `Bearer ${token}`,
-                "Content-Type": "application/json",
-            },
-        }
+      `https://social-media-app-server.onrender.com/users/${_id}/${friendId}`,
+      {
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      }
     );
     const data = await response.json();
     dispatch(setFriends({ friends: data }));
@@ -39,7 +42,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
   return (
     <FlexBetween>
       <FlexBetween gap="1rem">
-        <UserImage image={userPicturePath} size="55px" />
+        <UserImage picturePath={picturePath} size="55px" />
         <Box
           onClick={() => {
             navigate(`/profile/${friendId}`);
