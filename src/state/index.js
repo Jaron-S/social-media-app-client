@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  mode: "light",
   user: {
     _id: "63d3245310249c43ca38804a",
     firstName: "John",
@@ -9,48 +8,17 @@ const initialState = {
     email: "johnsmith@gmail.com",
     password: "$2b$10$.3F/Zx6uD4iGFEXkj8/Mbeohp8PITsJid7oynAybKq545XzggRJe.",
     picturePath: "p11.webp",
-    posts: [],
-    friends: [
-      {
-        _id: "63cae259ccea636a4d97d0b9",
-        firstName: "Tessa",
-        lastName: "Gray",
-        occupation: "Journalist",
-        location: "Los Angeles, CA",
-        picturePath: "p7.webp",
-      },
-      {
-        _id: "63cae259ccea636a4d97d0ba",
-        firstName: "Xavier",
-        lastName: "Woods",
-        occupation: "Nurse",
-        location: "Hamilton, ON",
-        picturePath: "p8.webp",
-      },
-      {
-        _id: "63cae259ccea636a4d97d0b5",
-        firstName: "Lila",
-        lastName: "Fernandez",
-        occupation: "Artist",
-        location: "Montreal, QC",
-        picturePath: "p3.webp",
-      },
-    ],
+    friends: [],
     location: "Toronto, ON",
     occupation: "Developer",
     viewedProfile: 23,
     impressions: 5127,
     createdAt: "2023-01-27T01:09:39.640Z",
     updatedAt: "2023-02-15T03:00:07.134Z",
-    __v: 37,
   },
+  posts: [],
   token:
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZDMyNDUzMTAyNDljNDNjYTM4ODA0YSIsImlhdCI6MTY3NzAwMDkyMX0._mj26yjzg00FQ90IVK0Shi4t3_7NoKO4xIfgJ3qo-PU",
-  friends: [],
-  location: "fakelocation",
-  occupation: "fakeoccupation",
-  viewedProfile: 23,
-  impressions: 5127,
 };
 
 export const authSlice = createSlice({
