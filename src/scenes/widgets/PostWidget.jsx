@@ -8,6 +8,7 @@ import { Box, Divider, IconButton, Typography, useTheme } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
 import Friend from "components/Friend";
 import WidgetWrapper from "components/WidgetWrapper";
+import fileNames from "data/fileNames";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPost } from "state";
@@ -51,22 +52,12 @@ const PostWidget = ({
   };
 
   // Check if photos exists locally (for faster loading times)
-  function checkFileExists(urlToFile) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("HEAD", urlToFile, true);
-    xhr.send();
-
-    if (xhr.status === "404") {
-      return false;
-    } else {
-      return true;
-    }
-  }
-  // update post's picture path
-  if (!checkFileExists(picturePath)) {
-    picturePath = `https://social-media-app-server.onrender.com/assets/${picturePath}`;
-  } else {
+  if (fileNames.find((name) => name === picturePath)) {
+    console.log(`getting local asset: ${picturePath}`);
     picturePath = `/assets/${picturePath}`;
+  } else if (picturePath) {
+    console.log(`sending get request: ${picturePath}`);
+    picturePath = `https://social-media-app-server.onrender.com/assets/${picturePath}`;
   }
 
   return (

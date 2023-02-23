@@ -1,24 +1,15 @@
 import { Box } from "@mui/material";
+import fileNames from "data/fileNames";
 
 const UserImage = ({ image, size = "60px" }) => {
-  // Check if photos exists locally (for faster loading times)
-  function checkFileExists(urlToFile) {
-    var xhr = new XMLHttpRequest();
-    xhr.open("HEAD", urlToFile, true);
-    xhr.send();
-
-    if (xhr.status === "404") {
-      return false;
-    } else {
-      return true;
-    }
-  }
-  console.log(`Picture Path: ${image}`);
-  // update post's picture path
-  if (!checkFileExists(image)) {
-    image = `https://social-media-app-server.onrender.com/assets/${image}`;
-  } else {
+  // Check if photos exists locally and update post's picture path
+  // (for faster loading times)
+  if (fileNames.find((name) => name === image)) {
+    console.log(`getting local asset: ${image}`);
     image = `/assets/${image}`;
+  } else {
+    console.log(`sending get request: ${image}`);
+    image = `https://social-media-app-server.onrender.com/assets/${image}`;
   }
 
   return (
